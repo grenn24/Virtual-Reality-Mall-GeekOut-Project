@@ -21,6 +21,10 @@ def result():
     return render_template("result.html", character=character, gif_url=gif_url)
   else:
     return "Sorry, there was an error."
+
+@app.route("/clothing")
+def clothing():
+  return render_template("clothing.html")
   
 if __name__ == "__main__":
   app.run()
