@@ -9,6 +9,14 @@ app = Flask(__name__)
 @app.route("/")
 def home():
   return render_template("index.html")
+
+@app.route("/mall")
+def mall():
+  return render_template("mall.html")
+
+@app.route("/cart")
+def cart():
+  return render_template("cart.html")
   
 @app.route("/entrance")
 def entrance():
