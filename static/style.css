@@ -1,11 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 body {
-  font-family: courier;
-  background
+  font-family: 'Poppins', sans-serif;
+  background: #121212;
   margin: 2em;
   letter-spacing: 1px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #ffffff;
 }
 
 header {
-    margin-left:30px;
-    margin-top:30px;
+  margin-left:30px;
+  margin-top:30px;
+  color: #ffffff;
+}
+
+.card {
+  background: #282828;
 }
