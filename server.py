@@ -21,10 +21,18 @@ def result():
     return render_template("result.html", character=character, gif_url=gif_url)
   else:
     return "Sorry, there was an error."
+  
+@app.route("/entrance")
+def entrance():
+  return render_template("entrance.html")
 
-@app.route("/clothing")
-def clothing():
-  return render_template("clothing.html")
+@app.route("/fashion")
+def fashion():
+  return render_template("fashion.html")
+
+@app.route("/fnb")
+def fnb():
+  return render_template("fnb.html")
   
 if __name__ == "__main__":
   app.run()
