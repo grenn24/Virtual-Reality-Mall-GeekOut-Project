@@ -17,10 +17,6 @@ def entrance():
 @app.route("/fashion")
 def fashion():
   return render_template("fashion.html")
-
-@app.route("/fnb")
-def fnb():
-  return render_template("fnb.html")
   
 if __name__ == "__main__":
   app.run()

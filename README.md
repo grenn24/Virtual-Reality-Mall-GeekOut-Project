@@ -5,7 +5,6 @@
 - cart.html : shopping cart
 - entrance.html : main page for vr mall
 - fashion.html : page for vr fashion store
-- fnb.html : page for f&b store
 
 ## Technologies
 - A-Frame
