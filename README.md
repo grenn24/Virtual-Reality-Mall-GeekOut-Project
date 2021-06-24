@@ -9,4 +9,5 @@
 ## Technologies
 - A-Frame
 - Flask
+- Bootstrap
 - Computer Vision
