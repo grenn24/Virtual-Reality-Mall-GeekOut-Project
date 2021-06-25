@@ -27,6 +27,32 @@
       });
     </script>
     
+    <script>
+      AFRAME.registerComponent('add-to-cart-on-click-shirt', {
+        init: function () {
+          var data = this.data;
+          var el = this.el;
+
+          el.addEventListener('click', function () {
+              document.getElementById('feedback1').object3D.visible = true
+          });
+        }
+      });
+    </script>
+    
+    <script>
+      AFRAME.registerComponent('add-to-cart-on-click-pants', {
+        init: function () {
+          var data = this.data;
+          var el = this.el;
+
+          el.addEventListener('click', function () {
+              document.getElementById('feedback2').object3D.visible = true
+          });
+        }
+      });
+    </script>
+    
   </head>
   
   <body>
@@ -35,14 +61,18 @@
         <img id="supermarket" crossorigin="anonymous" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fshop.jpg?v=1624545750475">
         <img id="shirt-box" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fshirt-box.png?v=1624555847608">
         <img id="pants-box" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fpants-box.png?v=1624555843996">
+        <img id="entrance-box" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fentrance-box.png?v=1624584182717">
+        <img id="cart-box" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fcart-box.png?v=1624584180259">
+        
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        
         <a-asset-item id="shirt-obj" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fshirt.obj?v=1624545346330"></a-asset-item>
         <a-asset-item id="shirt-mtl" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fshirt.mtl?v=1624545343180"></a-asset-item>
         <a-asset-item id="pants-obj" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fpants.obj?v=1624553173338"></a-asset-item>
       </a-assets>
       
       <a-obj-model id="shirt"
-                   navigate-on-click="url:https://mallite.glitch.me/"
+                   add-to-cart-on-click-shirt
                    event-set__mouseenter="scale: 2 2 2"
                    event-set__mouseleave="scale: 1 1 1"
                    sound="on:click; src:#click-sound"
@@ -53,7 +83,7 @@
                    mtl="#shirt-mtl"></a-obj-model>
       
       <a-obj-model id="pants"
-                   navigate-on-click="url:https://mallite.glitch.me/"
+                   add-to-cart-on-click-pants
                    event-set__mouseenter="scale: 0.75 0.75 0.75"
                    event-set__mouseleave="scale: 0.5 0.5 0.5"
                    sound="on:click; src:#click-sound"
@@ -85,6 +115,10 @@
       <a-entity position="-2 1.5 -3"
                 geometry="primitive: plane; height: 1; width: 1"
                 material="shader: flat; src: #pants-box"></a-entity>
+      
+      <a-text id="feedback1" visible="false" position="-0.5 2.2 -3" value="Added to Cart!"></a-text>
+      <a-text id="feedback2" visible="false" position="-3 2.2 -3" value="Added to Cart!"></a-text>
+      
 
       <a-entity camera="" look-controls cursor="rayOrigin: mouse"></a-entity>
 
