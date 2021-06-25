@@ -44,31 +44,27 @@
       </a-assets>
       
       <a-obj-model id="shirt"
-                   add-to-cart-on-click-shirt
                    event-set__mouseenter="scale: 2 2 2"
                    event-set__mouseleave="scale: 1 1 1"
                    sound="on:click; src:#click-sound"
                    position="0 -0.5 -2"
-                   rotation="0 0 0"
-                   animation="property: rotation; to: 0 360 0 ; loop: true; dur: 2000"
                    src="#shirt-obj"
                    mtl="#shirt-mtl"></a-obj-model>
       
       <a-obj-model id="pants"
-                   add-to-cart-on-click-pants
                    event-set__mouseenter="scale: 0.75 0.75 0.75"
                    event-set__mouseleave="scale: 0.5 0.5 0.5"
                    sound="on:click; src:#click-sound"
                    position="-2 -1.5 -3"
-                   rotation="0 0 0"
-                   animation="property: rotation; to: 0 360 0 ; loop: true; dur: 2000"
                    src="#pants-obj"></a-obj-model>
       
-      
-      
-      <a-text id="feedback1" visible="false" position="-0.5 2.2 -3" value="Added to Cart!"></a-text>
-      <a-text id="feedback2" visible="false" position="-3 2.2 -3" value="Added to Cart!"></a-text>
-      
+      <a-entity position="2 0 -3"
+                geometry="primitive: plane; height: 1; width: 1"
+                material="shader: flat; src: #back-box"
+                navigate-on-click="url:https://mallite.glitch.me/fashion"
+                event-set__mouseenter="scale: 1.5 1.5 1.5"
+                event-set__mouseleave="scale: 1 1 1"
+                sound="on:click; src:#click-sound"></a-entity>
 
       <a-entity camera="" look-controls cursor="rayOrigin: mouse"></a-entity>
 
