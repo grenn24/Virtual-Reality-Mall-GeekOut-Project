@@ -28,7 +28,7 @@
      <a-scene>
  <a-assets>
       <img id="cursorimage" src="https://cdn4.iconfinder.com/data/icons/cursors-gestures/100/click3-512.png" /> 
-      <img id="body" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fbody.png?v=1624596604568"/>
+      <img id="body" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Favatar.jpg?v=1624597487146"/>
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
         
         <a-asset-item id="shirt-obj" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fshirt.obj?v=1624545346330"></a-asset-item>
@@ -52,13 +52,10 @@
                    position="1 -1.5 -3"
                    src="#pants-obj"></a-obj-model>
        
-       <a-entity position="1.5 0 -3"
+       <a-entity position="0 1 -3"
+                 scale="3 6 3"
                 geometry="primitive: plane; height: 1; width: 1"
-                material="shader: flat; src: #entrance-box"
-                navigate-on-click="url:https://mallite.glitch.me/entrance"
-                event-set__mouseenter="scale: 1.5 1.5 1.5"
-                event-set__mouseleave="scale: 1 1 1"
-                sound="on:click; src:#body"></a-entity>
+                material="shader: flat; src: #body"></a-entity>
 
       <a-sky color="#ECECEC"></a-sky>
 
