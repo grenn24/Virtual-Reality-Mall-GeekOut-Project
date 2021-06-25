@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wardrobe</title>
+    <meta name="description" content="Try on the clothes!">
+    <link rel="icon" href="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fmallite.png?v=1624555240998" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+    
+    <script>
+      AFRAME.registerComponent('navigate-on-click', {
+        schema: {
+          url: {default: ''}
+        },
+
+        init: function () {
+          var data = this.data;
+          var el = this.el;
+
+          el.addEventListener('click', function () {
+            window.location.href = data.url;
+          });
+        }
+      });
+    </script>
+    
+  </head>
+  
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="supermarket" crossorigin="anonymous" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fshop.jpg?v=1624545750475">
+        <img id="back-box" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fback-box.png?v=1624593266626">
+        
+        <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        
+        <a-asset-item id="shirt-obj" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fshirt.obj?v=1624545346330"></a-asset-item>
+        <a-asset-item id="shirt-mtl" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fshirt.mtl?v=1624545343180"></a-asset-item>
+        <a-asset-item id="pants-obj" src="https://cdn.glitch.com/2000b310-d3f0-4505-b94a-984cf915198b%2Fpants.obj?v=1624553173338"></a-asset-item>
+      </a-assets>
+      
+      <a-obj-model id="shirt"
+                   add-to-cart-on-click-shirt
+                   event-set__mouseenter="scale: 2 2 2"
+                   event-set__mouseleave="scale: 1 1 1"
+                   sound="on:click; src:#click-sound"
+                   position="0 -0.5 -2"
+                   rotation="0 0 0"
+                   animation="property: rotation; to: 0 360 0 ; loop: true; dur: 2000"
+                   src="#shirt-obj"
+                   mtl="#shirt-mtl"></a-obj-model>
+      
+      <a-obj-model id="pants"
+                   add-to-cart-on-click-pants
+                   event-set__mouseenter="scale: 0.75 0.75 0.75"
+                   event-set__mouseleave="scale: 0.5 0.5 0.5"
+                   sound="on:click; src:#click-sound"
+                   position="-2 -1.5 -3"
+                   rotation="0 0 0"
+                   animation="property: rotation; to: 0 360 0 ; loop: true; dur: 2000"
+                   src="#pants-obj"></a-obj-model>
+      
+      
+      
+      <a-text id="feedback1" visible="false" position="-0.5 2.2 -3" value="Added to Cart!"></a-text>
+      <a-text id="feedback2" visible="false" position="-3 2.2 -3" value="Added to Cart!"></a-text>
+      
+
+      <a-entity camera="" look-controls cursor="rayOrigin: mouse"></a-entity>
+
+      <a-sky id="image-360" radius="10" src="#supermarket"
+             animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
+             animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
+    </a-scene>
+  </body>
+</html>
