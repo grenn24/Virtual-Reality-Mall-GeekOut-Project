@@ -1,6 +1,6 @@
 # Mallite
 
-A virtual reality mall project completed during GeekOut 2021 Hackathon.
+A virtual reality mall project completed during GeekOut 2021 Hackathon
 
 ## Flask Structure
 - index.html : home page (can change to home.html if yall want)
