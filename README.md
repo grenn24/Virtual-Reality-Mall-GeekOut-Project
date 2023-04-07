@@ -1,6 +1,8 @@
 # Mallite
 
-## Structure
+A virtual reality mall project completed during GeekOut 2021 Hackathon.
+
+## Flask Structure
 - index.html : home page (can change to home.html if yall want)
 - cart.html : shopping cart
 - entrance.html : main page for vr mall
